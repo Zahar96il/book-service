@@ -1,5 +1,6 @@
 package telran.java47.book.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -92,9 +93,12 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
+	@Transactional
 	public List<PublisherDto> findPublishersByAuthor(String author) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Book> booksByAuthor = bookRepository.findByAuthorsName(author).collect(Collectors.toList());
+		List<PublisherDto> publishers = booksByAuthor.stream().map(p -> p.getPublisher()).map(p -> modelMapper.map(p, PublisherDto.class))
+				.collect(Collectors.toList());
+		return publishers;
 	}
 
 	@Override

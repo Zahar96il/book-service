@@ -9,4 +9,6 @@ import telran.java47.book.model.Author;
 public interface AuthorRepository extends PagingAndSortingRepository<Author, String> {
 	
 	
+	
+	
 }

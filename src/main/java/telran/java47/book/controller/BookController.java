@@ -56,10 +56,9 @@ public class BookController {
 		return bookService.findBookAuthors(isbn);
 	}
 
-	
-	public List<PublisherDto> findPublishersByAuthor(String author) {
-		// TODO Auto-generated method stub
-		return null;
+	@GetMapping("/publishers/author/{author}")
+	public List<PublisherDto> findPublishersByAuthor(@PathVariable String author) {
+		return bookService.findPublishersByAuthor(author);
 	}
 
 	
