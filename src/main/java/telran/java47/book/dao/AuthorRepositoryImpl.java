@@ -4,12 +4,10 @@ import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import telran.java47.book.model.Author;
-import telran.java47.book.model.Book;
 
 @Repository
 public class AuthorRepositoryImpl implements AuthorRepository {
@@ -24,8 +22,7 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 
 	@Override
 	public void delete(Author author) {
-		Author same = em.find(Author.class, author);
-		em.remove(same);
+		em.remove(author);
 		em.flush();
 	}
 
