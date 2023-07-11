@@ -57,14 +57,13 @@ public class BookController {
 	}
 
 	@GetMapping("/publishers/author/{author}")
-	public List<PublisherDto> findPublishersByAuthor(@PathVariable String author) {
+	public List<String> findPublishersByAuthor(@PathVariable String author) {
 		return bookService.findPublishersByAuthor(author);
 	}
 
-	
-	public AuthorDto removeAuthor(String author) {
-		// TODO Auto-generated method stub
-		return null;
+	@DeleteMapping("/author/authorName")
+	public AuthorDto removeAuthor(String authorName) {
+		return bookService.removeAuthor(authorName);
 	}
 
 }

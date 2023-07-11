@@ -22,7 +22,7 @@ public interface BookService {
 	
 	List<AuthorDto> findBookAuthors(String isbn);
 	
-	List<PublisherDto> findPublishersByAuthor(String author);
+	List<String> findPublishersByAuthor(String author);
 	
 	AuthorDto removeAuthor(String author);
 	

@@ -1,14 +1,17 @@
 package telran.java47.book.dao;
 
-
-
-import org.springframework.data.repository.PagingAndSortingRepository;
+import java.util.Optional;
 
 import telran.java47.book.model.Author;
 
-public interface AuthorRepository extends PagingAndSortingRepository<Author, String> {
+public interface AuthorRepository  {
 	
+	Optional<Author> findById(String authorName);
+
+	void delete(Author author);
 	
+	Author save(Author author);
+
 	
 	
 }
