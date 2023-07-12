@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import telran.java47.book.dto.AuthorDto;
 import telran.java47.book.dto.BookDto;
-import telran.java47.book.dto.PublisherDto;
 import telran.java47.book.service.BookService;
 
 @RestController
@@ -61,8 +60,8 @@ public class BookController {
 		return bookService.findPublishersByAuthor(author);
 	}
 
-	@DeleteMapping("/author/authorName")
-	public AuthorDto removeAuthor(String authorName) {
+	@DeleteMapping("/author/{authorName}")
+	public AuthorDto removeAuthor(@PathVariable String authorName) {
 		return bookService.removeAuthor(authorName);
 	}
 

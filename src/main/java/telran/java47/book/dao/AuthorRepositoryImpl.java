@@ -23,7 +23,7 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 	@Override
 	public void delete(Author author) {
 		em.remove(author);
-		em.flush();
+		
 	}
 
 	@Override
